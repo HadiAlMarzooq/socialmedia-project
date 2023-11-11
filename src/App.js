@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { ChakraProvider } from "@chakra-ui/react";
+import theme from './theme';
+import Header from './components/Header';
+import EducationalContent from './components/EducationalContent';
+// import Quiz from './components/Quiz';
+// import MindfulnessSection from './components/MindfulnessSection';
+// import ResourcesSection from './components/ResourcesSection';
+// import Footer from './components/Footer';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider theme={theme}>
+      <Header />
+      <EducationalContent />
+      {/* <Quiz />
+      <MindfulnessSection />
+      <ResourcesSection />
+      <Footer /> */}
+    </ChakraProvider>
   );
-}
+};
 
 export default App;
