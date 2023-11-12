@@ -1,6 +1,16 @@
-import React, { useState } from 'react';
-import { Box, Heading, VStack, Link, Collapse, Flex, Icon, Text } from '@chakra-ui/react';
-import { ChevronUpIcon, ChevronDownIcon } from '@chakra-ui/icons';
+import React, { useState } from "react";
+import {
+  Box,
+  Heading,
+  VStack,
+  Link,
+  Collapse,
+  Flex,
+  Icon,
+  Text,
+} from "@chakra-ui/react";
+import { ChevronUpIcon, ChevronDownIcon } from "@chakra-ui/icons";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 const ResourcesSection = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,17 +43,39 @@ const ResourcesSection = () => {
       </Flex>
       <Collapse in={isOpen} animateOpacity>
         <VStack spacing={4} mt={4} align="start" p={4}>
-          <Text fontSize="md">استكشف هذه المصادر للحصول على مزيد من المعلومات والنصائح:</Text>
-          <Link color="teal.500" href="https://www.helpguide.org/articles/mental-health/social-media-and-mental-health.htm" isExternal>
+          <Text fontSize="md">
+            استكشف هذه المصادر للحصول على مزيد من المعلومات والنصائح:
+          </Text>
+          <Link
+            color="teal.500"
+            href="https://www.helpguide.org/articles/mental-health/social-media-and-mental-health.htm"
+            isExternal
+          >
+            <Icon as={ExternalLinkIcon} mr={2} />
             الفوائد والجوانب الإيجابية لوسائل التواصل الاجتماعي
           </Link>
-          <Link color="teal.500" href="https://www.helpguide.org/articles/mental-health/social-media-and-mental-health.htm" isExternal>
+          <Link
+            color="teal.500"
+            href="https://www.helpguide.org/articles/mental-health/social-media-and-mental-health.htm"
+            isExternal
+          >
+            <Icon as={ExternalLinkIcon} mr={2} />
             الآثار السلبية لاستخدام وسائل التواصل الاجتماعي
           </Link>
-          <Link color="teal.500" href="https://www.psychiatry.org/News-room/APA-Blogs/Tips-to-Take-Control-of-Your-Social-Media-Use" isExternal>
+          <Link
+            color="teal.500"
+            href="https://www.psychiatry.org/News-room/APA-Blogs/Tips-to-Take-Control-of-Your-Social-Media-Use"
+            isExternal
+          >
+            <Icon as={ExternalLinkIcon} mr={2} />
             نصائح لتقليل استخدام وسائل التواصل الاجتماعي
           </Link>
-          <Link color="teal.500" href="https://chicagopolicyreview.org/2021/01/06/are-we-better-off-with-less-social-media-evidence-says-yes/" isExternal>
+          <Link
+            color="teal.500"
+            href="https://chicagopolicyreview.org/2021/01/06/are-we-better-off-with-less-social-media-evidence-says-yes/"
+            isExternal
+          >
+            <Icon as={ExternalLinkIcon} mr={2} />
             فوائد التخلص من الإدمان الرقمي وتقليل استخدام وسائل التواصل
           </Link>
           {/* Add more resources as needed */}
