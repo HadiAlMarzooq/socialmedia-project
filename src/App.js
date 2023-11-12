@@ -1,5 +1,13 @@
 import React from "react";
-import { ChakraProvider, Container, VStack, Flex, Text, Link, Icon } from "@chakra-ui/react";
+import {
+  ChakraProvider,
+  Container,
+  VStack,
+  Flex,
+  Text,
+  Link,
+  Icon,
+} from "@chakra-ui/react";
 import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import theme from "./theme";
@@ -15,13 +23,19 @@ const MotionContainer = motion(Container);
 const App = () => {
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
 
   return (
     <ChakraProvider theme={theme}>
       <VStack minHeight="100vh" justify="space-between" width="100%">
-        <MotionContainer maxW="container.xxl" variants={containerVariants} initial="hidden" animate="visible">
+        <MotionContainer
+          maxW="container.xxl"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          backgroundColor="gray.50"
+        >
           <Header />
           <EducationalContent />
           <Quiz />
@@ -31,7 +45,12 @@ const App = () => {
 
         <Container maxW="container.xxl">
           <Footer />
-          <Flex textAlign="center" paddingTop="0.5rem" alignItems="center" justifyContent="center">
+          <Flex
+            textAlign="center"
+            paddingTop="0.5rem"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Text fontSize="xs">
               Ⓒ جميع حقوق النشر للنطاقات تحت hadi.zone محفوظة لـ هادي المرزوق
             </Text>
