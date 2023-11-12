@@ -17,7 +17,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { ChevronUpIcon, ChevronDownIcon } from "@chakra-ui/icons";
-import useStore from "../stores/QuizStore"; // Adjust the path according to your project structure
+import useStore from "../stores/QuizStore";
 
 const Quiz = () => {
   const { quizScore, incrementScore } = useStore();
@@ -154,7 +154,7 @@ const Quiz = () => {
       setShowResults(true);
     }
 
-    setSelectedOption(null); // Reset the selected option for the next question
+    setSelectedOption(null);
   };
   const resultsMessage = () => {
     if (quizScore <= 10) {

@@ -60,7 +60,6 @@ const EducationalContent = () => {
               <ListIcon as={MdCheckCircle} color="green.500" />
               مشاكل صحية عقلية: مثل الاكتئاب والقلق والشعور بالعزلة والوحدة والمقارنة غير الصحية مع الآخرين.
             </ListItem>
-            {/* Further content can be added here */}
           </List>
         </Box>
       </Collapse>
