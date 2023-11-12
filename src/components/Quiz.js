@@ -96,10 +96,8 @@ const Quiz = () => {
       points: [0, 1, 2, 3],
     },
   ];
-
   const handleSelect = (value) => {
     setSelectedOption(value);
-    incrementScore(questions[questionIndex].points[parseInt(value, 10)]);
   };
 
   const scoreMeter = () => {
@@ -146,7 +144,6 @@ const Quiz = () => {
       });
       return;
     }
-    console.log(quizScore);
     incrementScore(
       questions[questionIndex].points[parseInt(selectedOption, 10)]
     );
@@ -185,7 +182,7 @@ const Quiz = () => {
         }}
       >
         <Heading size="lg" color="primary.500">
-            📄 أداة تقييم 
+          📄 أداة تقييم
         </Heading>
         <Icon
           as={isOpen ? ChevronUpIcon : ChevronDownIcon}
@@ -209,7 +206,10 @@ const Quiz = () => {
                   هذا الاختبار سيساعدك في تقييم استخدامك لمواقع التواصل
                   الاجتماعي. انقر على الزر أدناه لبدء الاختبار.
                 </Text>
-                <Button colorScheme="green" onClick={() => setQuizStarted(true)}>
+                <Button
+                  colorScheme="green"
+                  onClick={() => setQuizStarted(true)}
+                >
                   بدء الاختبار
                 </Button>
               </VStack>
