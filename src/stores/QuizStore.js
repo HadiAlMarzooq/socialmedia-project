@@ -2,7 +2,7 @@ import create from 'zustand';
 
 const useStore = create(set => ({
   quizScore: 0,
-  incrementScore: () => set(state => ({ quizScore: state.quizScore + 1 })),
+  incrementScore: (points) => set(state => ({ quizScore: state.quizScore + points })),
   resetScore: () => set({ quizScore: 0 }),
 }));
 
