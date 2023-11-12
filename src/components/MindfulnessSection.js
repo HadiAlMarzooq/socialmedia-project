@@ -69,7 +69,7 @@ const BoxBreathing = () => {
         }}
       >
         <Heading size="lg" color="primary.500">
-          أداة مساعدة لتقليل القلق
+        🧘‍♂️ أداة مساعدة لتقليل القلق 
         </Heading>
         <Icon
           as={isBoxBreathingOpen ? ChevronUpIcon : ChevronDownIcon}
