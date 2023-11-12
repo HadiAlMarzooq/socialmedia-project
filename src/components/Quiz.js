@@ -20,13 +20,13 @@ import { ChevronUpIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import useStore from "../stores/QuizStore"; // Adjust the path according to your project structure
 
 const Quiz = () => {
-  const { quizScore, incrementScore, resetScore } = useStore();
+  const { quizScore, incrementScore } = useStore();
   const [questionIndex, setQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const toast = useToast();
-
+  const [quizStarted, setQuizStarted] = useState(false);
   const toggleOpen = () => setIsOpen(!isOpen);
 
   const questions = [
@@ -203,24 +203,38 @@ const Quiz = () => {
           </VStack>
         ) : (
           <Box p={4}>
-            <Heading mb={6}>{questions[questionIndex].question}</Heading>
-            <RadioGroup
-              key={questionIndex} // Add a unique key
-              onChange={handleSelect}
-              value={selectedOption}
-            >
-              <Stack direction="column">
-                {questions[questionIndex].options.map((option, index) => (
-                  <Radio key={index} value={index.toString()}>
-                    {option}
-                  </Radio>
-                ))}
-              </Stack>
-            </RadioGroup>
+            {!quizStarted ? (
+              <VStack p={4} spacing={4}>
+                <Text>
+                  هذا الاختبار سيساعدك في تقييم استخدامك لمواقع التواصل
+                  الاجتماعي. انقر على الزر أدناه لبدء الاختبار.
+                </Text>
+                <Button colorScheme="green" onClick={() => setQuizStarted(true)}>
+                  بدء الاختبار
+                </Button>
+              </VStack>
+            ) : (
+              <>
+                <Heading mb={6}>{questions[questionIndex].question}</Heading>
+                <RadioGroup
+                  key={questionIndex} // Add a unique key
+                  onChange={handleSelect}
+                  value={selectedOption}
+                >
+                  <Stack direction="column">
+                    {questions[questionIndex].options.map((option, index) => (
+                      <Radio key={index} value={index.toString()}>
+                        {option}
+                      </Radio>
+                    ))}
+                  </Stack>
+                </RadioGroup>
 
-            <Button mt={4} colorScheme="green" onClick={handleNext}>
-              التالي
-            </Button>
+                <Button mt={4} colorScheme="green" onClick={handleNext}>
+                  التالي
+                </Button>
+              </>
+            )}
           </Box>
         )}
       </Collapse>
