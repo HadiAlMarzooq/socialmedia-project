@@ -8,16 +8,16 @@ const theme = extendTheme({
   direction: 'rtl',
   colors: {
     primary: {
-      50: "#f2f6f3", // lightest shade
+      50: "#f2f6f3",
       100: "#dcecdc",
       200: "#c6e2c5",
       300: "#b1d9ae",
       400: "#9bcf97",
-      500: "#85c580", // default or 'normal' shade
+      500: "#85c580",
       600: "#69ab65",
       700: "#4c914a",
       800: "#30772f",
-      900: "#144d14", // darkest shade
+      900: "#144d14",
     },
     gray: {
       50: "#f7f7f7",
