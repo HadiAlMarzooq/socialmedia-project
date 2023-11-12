@@ -185,7 +185,7 @@ const Quiz = () => {
         }}
       >
         <Heading size="lg" color="primary.500">
-          أداة تقييم
+            📄 أداة تقييم 
         </Heading>
         <Icon
           as={isOpen ? ChevronUpIcon : ChevronDownIcon}
