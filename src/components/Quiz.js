@@ -170,7 +170,7 @@ const Quiz = () => {
   };
 
   return (
-    <Box mt={5}>
+    <Box margin="1rem">
       <Flex
         align="center"
         justify="space-between"
